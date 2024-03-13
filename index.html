@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+<link rel="shortcut icon" href="th-removebg-preview.png" type="image/x-icon">
+<script src="https://kit.fontawesome.com/cce3effa95.js" crossorigin="anonymous"></script>
+<title>Froggy</title>
+</head>
+<body>
+    <section id="sidebar">
+      <div class="header">
+        <div>
+          <h1 class="title">Flexbox Froggy</h1>
+        </div>
+        <div id="level-counter">
+          <span class="arrow left">
+            <span class="triangle"></span>
+          </span>
+          <span id="level-indicator">
+            <span id="labelLevel" class="translate">Level</span>
+            <span class="current">1</span>
+            <span id="labelOf" class="translate">of</span>
+            <span class="total">1</span>
+            <span class="caret">▾</span>
+          </span>
+          <span class="arrow right">
+            <span class="triangle"></span>
+          </span>
+        </div>
+      </div>
+      <p id="instructions"><p>Welcome to Flexbox Froggy, a game where you help Froggy and friends by writing CSS code! Guide this frog to the lilypad on the right by using the <code class="help">justify-content</code> property, which aligns items horizontally and accepts the following values:</p><ul><li><code>flex-start</code>: Items align to the left side of the container.</li><li><code>flex-end</code>: Items align to the right side of the container.</li><li><code>center</code>: Items align at the center of the container.</li><li><code>space-between</code>: Items display with equal spacing between them.</li><li><code>space-around</code>: Items display with equal spacing around them.</li></ul><p>For example, <code>justify-content: flex-end;</code> will move the frog to the right. <img src="https://code.org/api/hour/begin_flexbox_froggy.png"></p></p>
+      <div id="editor">
+        <div id="css">
+          <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
+          <pre id="before">#pond { 
+            display: flex;
+            <input id="code" autofocus="" autocapitalize="none" style="height: 24px;" onchange="myFunction(this.value)" 
+            oninput="myFunction(this.value)">
+            <script>
+              function myFunction(val) {
+    console.log(val);
+
+    // Sử dụng biểu thức chính quy để tìm giá trị của thuộc tính
+    var regex = /justify-content:\s*(\w+(-\w+)*|\w+)/;
+
+
+    // Sử dụng match() để tìm các kết quả phù hợp với biểu thức chính quy
+    var match = val.match(regex);
+
+    if (match) {
+        // Lấy giá trị của thuộc tính từ kết quả match
+        var value = match[1];
+
+        // Thay đổi thuộc tính justify-content của phần tử #pond
+        document.getElementById('pond').style.justifyContent = value;
+    }
+}
+
+              </script>
+          <pre id="after">}</pre>
+        </div>
+        <button id="next" class="translate">Next</button>
+      </div>
+      
+      </section>
+      <section id="view">
+        <div id="board">
+          <div id="pond">
+            <div class="frog green">
+              <div class="bg animated pulse infinite"></div>
+            </div>
+          </div>
+          <div id="background" style="justify-content: flex-end;">
+            <div class="lilypad green">
+              <div class="bg" style="transform: scale(0.987255) rotate(262.998deg);"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lilypad green">
+          <div class="bg" style="transform: scale(0.987255) rotate(262.998deg);"></div>
+        </div>
+      </section>
+      
+  </body>
+</html>
+
